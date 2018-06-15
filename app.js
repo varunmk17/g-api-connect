@@ -1,8 +1,10 @@
 var app = require('./server.js');
+var express = require('express');
 
+app.use('/gverify', express.static('static'))
 
-app.get('/gapi', (req, res) => {
-  res.send('GET');
+app.get('/gapi/verify', (req, res) => {
+  res.send('./static/googled46d7d59b661cfcc.html');
 });
 
 app.post('/gapi/notifications', (req, res) => {
